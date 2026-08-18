@@ -1,0 +1,15 @@
+# Copy this file to cloudflared/config.yml after creating the dedicated Named Tunnel.
+# Never commit the real credentials JSON or a tunnel token.
+tunnel: 118d0011-4f4a-4112-81b3-e1a08e1af79a
+credentials-file: /Users/work/.cloudflared/118d0011-4f4a-4112-81b3-e1a08e1af79a.json
+
+ingress:
+  # This hostname must also be protected by a Cloudflare Access application.
+  - hostname: local-rag-llm.amirkatamachi.com
+    service: http://127.0.0.1:8091
+    originRequest:
+      connectTimeout: 30s
+      keepAliveTimeout: 90s
+      noTLSVerify: false
+  # Required catch-all: never route arbitrary hostnames to the local machine.
+  - service: http_status:404

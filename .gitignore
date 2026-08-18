@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+coverage/
+.env
+.env.*
+!.env.example
+.wrangler/
+.dev.vars
+.open-next/
+logs/
+cloudflared/config.yml
+cloudflared/*.json
+.env.tunnel
+*.log
+*.tsbuildinfo
+.bm25/

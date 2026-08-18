@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "local-rag-document-assistant",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "r2_buckets": [
+    {
+      "binding": "DOCUMENTS",
+      "bucket_name": "local-rag-document-assistant-documents"
+    }
+  ],
+  "vars": {
+    "LOCAL_LLM_BASE_URL": "https://local-rag-llm.amirkatamachi.com/v1",
+    "LOCAL_LLM_MODEL": "gemma-4-e4b",
+    "VECTOR_SEARCH_ENABLED": "0"
+  }
+}
